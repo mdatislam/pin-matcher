@@ -42,13 +42,30 @@ function veryfiPin(){
 const pinNumber = document.getElementById('pin-inputField').value;
 const successMsg = document.getElementById('success');
 const errorMsg = document.getElementById('error');
+
+
  if(pinNumber != '' && calculatorDisplay == pinNumber){
     successMsg.style.display = 'block';
     errorMsg.style.display = 'none'
  }
  else{
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'block'
+    
+    const actionDisplay = document.getElementById('action')
+    const preValue = actionDisplay.innerText
+    if(preValue>=1){
+        actionDisplay.innerText  = preValue-1;
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'block'
+
+    }
+    else{
+        document.getElementById('submit-btn').style.backgroundColor= 'red'
+        actionDisplay.setAttribute('disabled', true)
+        document.getElementById('try-msg').innerText = 'You cross the tring Limit'
+    }
+    
+    
+    
 
  }
 }
