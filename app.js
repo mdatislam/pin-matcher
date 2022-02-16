@@ -47,6 +47,7 @@ const errorMsg = document.getElementById('error');
  if(pinNumber != '' && calculatorDisplay == pinNumber){
     successMsg.style.display = 'block';
     errorMsg.style.display = 'none'
+    document.getElementById('action').innerText='3'
  }
  else{
     
