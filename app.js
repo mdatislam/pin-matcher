@@ -48,8 +48,16 @@ const errorMsg = document.getElementById('error');
     successMsg.style.display = 'block';
     errorMsg.style.display = 'none'
     document.getElementById('action').innerText='3'
+    document.getElementById('cal-display').style.backgroundColor ='#222436';
+    
  }
- else{
+  else if(calculatorDisplay == ""){
+    document.getElementById('cal-display').style.backgroundColor ='red';
+      document.getElementById('cal-display').value ='Please Enter your Pin code Here !! '
+
+    }
+  
+ else if(pinNumber != '' && calculatorDisplay != pinNumber){
     
     const actionDisplay = document.getElementById('action')
     const preValue = actionDisplay.innerText
@@ -65,8 +73,6 @@ const errorMsg = document.getElementById('error');
         document.getElementById('try-msg').innerText = 'You cross the tring Limit'
     }
     
-    
-    
+}
 
- }
 }
